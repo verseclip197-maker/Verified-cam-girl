@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Piyu Girl - Official</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #141e30, #243b55);
+        color: white;
+        text-align: center;
+    }
+
+    .container {
+        padding: 40px 15px;
+    }
+
+    .profile {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid #1da1f2;
+        margin-top: 10px;
+        box-shadow: 0 0 20px rgba(29,161,242,0.5);
+    }
+
+    h1 {
+        margin: 10px 0 5px;
+        font-size: 34px;
+    }
+
+    .verified {
+        color: #1da1f2;
+        font-size: 18px;
+        margin-left: 5px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+        opacity: 0.8;
+        margin-bottom: 20px;
+    }
+
+    .card {
+        background: rgba(255,255,255,0.08);
+        padding: 20px;
+        border-radius: 15px;
+        max-width: 350px;
+        margin: auto;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+
+    .btn {
+        display: block;
+        width: 85%;
+        max-width: 280px;
+        margin: 12px auto;
+        padding: 14px;
+        border-radius: 12px;
+        font-size: 16px;
+        cursor: pointer;
+        text-decoration: none;
+        color: white;
+        transition: 0.3s;
+        border: none;
+    }
+
+    .telegram { background: #0088cc; }
+    .whatsapp { background: #25D366; }
+    .pay { background: #ff9800; }
+
+    .btn:hover {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+
+    /* POPUP */
+    .popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.7);
+    }
+
+    .popup-box {
+        background: white;
+        color: black;
+        width: 85%;
+        max-width: 320px;
+        margin: 25% auto;
+        padding: 20px;
+        border-radius: 15px;
+        text-align: center;
+    }
+
+    .close {
+        background: red;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        margin-top: 10px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    .badge {
+        display: inline-block;
+        background: #1da1f2;
+        color: white;
+        font-size: 12px;
+        padding: 4px 10px;
+        border-radius: 20px;
+        margin-left: 6px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- PROFILE -->
+    <img class="profile" src="https://i.imgur.com/your-image.jpg" alt="Profile">
+
+    <h1>
+        Piyu Girl
+        <span class="verified">✔</span>
+    </h1>
+
+    <span class="badge">VERIFIED</span>
+
+    <p class="subtitle">💯 Verified Official Girl Profile</p>
+
+    <!-- CARD -->
+    <div class="card">
+
+        <a class="btn telegram" href="https://t.me/piyugirl" target="_blank">
+            Open Telegram
+        </a>
+
+        <a class="btn whatsapp" href="https://wa.me/94771234567" target="_blank">
+            Open WhatsApp
+        </a>
+
+        <button class="btn pay" onclick="openPopup()">
+            Pay Now
+        </button>
+
+    </div>
+</div>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+    <div class="popup-box">
+        <h3>🔒 Unlock Access</h3>
+        <p>To continue, complete payment</p>
+        <p><b>Amount: 200 LKR</b></p>
+
+        <button class="btn pay" onclick="fakePay()">Confirm Payment</button>
+        <br>
+        <button class="close" onclick="closePopup()">Close</button>
+    </div>
+</div>
+
+<script>
+    function openPopup() {
+        document.getElementById("popup").style.display = "block";
+    }
+
+    function closePopup() {
+        document.getElementById("popup").style.display = "none";
+    }
+
+    function fakePay() {
+        alert("✅ Payment Successful!\nAccess Unlocked");
+        closePopup();
+    }
+</script>
+
+</body>
+</html>
